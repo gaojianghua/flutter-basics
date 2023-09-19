@@ -2,14 +2,16 @@
  * @Author: 高江华 g598670138@163.com
  * @Date: 2023-09-16 13:43:45
  * @LastEditors: 高江华
- * @LastEditTime: 2023-09-18 17:05:00
+ * @LastEditTime: 2023-09-19 17:26:30
  * @Description: file content
  */
 import 'package:flutter/material.dart';
+import '../demo/basic_demo.dart';
 import '../demo/drawer_demo.dart';
 import '../demo/bottom_navigation_bar_demo.dart';
 import '../demo/list_view_demo.dart';
-import '../demo/layout_demo.dart';
+import '../demo/view_demo.dart';
+import '../demo/sliver_demo.dart';
 
 void main() => runApp(const App());
 
@@ -36,7 +38,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
@@ -58,17 +60,15 @@ class Home extends StatelessWidget {
                 Tab(icon: Icon(Icons.account_balance_wallet)),
                 Tab(icon: Icon(Icons.airplane_ticket)),
                 Tab(icon: Icon(Icons.alarm)),
+                Tab(icon: Icon(Icons.view_quilt)),
               ]),
         ),
         body: const TabBarView(
           children: <Widget>[
             ListViewDemo(),
-            LayoutDemo(),
-            Icon(
-              Icons.alarm,
-              size: 128,
-              color: Colors.black12,
-            ),
+            BasicDemo(),
+            SliverDemo(),
+            ViewDemo(),
           ],
         ),
         drawer: const DrawerDemo(),
