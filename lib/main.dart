@@ -2,10 +2,14 @@
  * @Author: 高江华 g598670138@163.com
  * @Date: 2023-09-16 13:43:45
  * @LastEditors: 高江华
- * @LastEditTime: 2023-09-18 11:43:30
+ * @LastEditTime: 2023-09-18 17:05:00
  * @Description: file content
  */
 import 'package:flutter/material.dart';
+import '../demo/drawer_demo.dart';
+import '../demo/bottom_navigation_bar_demo.dart';
+import '../demo/list_view_demo.dart';
+import '../demo/layout_demo.dart';
 
 void main() => runApp(const App());
 
@@ -36,11 +40,6 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
-          leading: const IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigration',
-            onPressed: null,
-          ),
           title: const Text('Flutter Demo Home Page'),
           actions: const <Widget>[
             IconButton(
@@ -56,40 +55,24 @@ class Home extends StatelessWidget {
               indicatorSize: TabBarIndicatorSize.label,
               indicatorWeight: 1.0,
               tabs: <Widget>[
-                Tab(text: '首页', icon: Icon(Icons.home)),
-                Tab(text: '购物车', icon: Icon(Icons.card_travel)),
-                Tab(text: '我的', icon: Icon(Icons.account_circle)),
+                Tab(icon: Icon(Icons.account_balance_wallet)),
+                Tab(icon: Icon(Icons.airplane_ticket)),
+                Tab(icon: Icon(Icons.alarm)),
               ]),
         ),
         body: const TabBarView(
           children: <Widget>[
+            ListViewDemo(),
+            LayoutDemo(),
             Icon(
-              Icons.home,
-              size: 128,
-              color: Colors.black12,
-            ),
-            Icon(
-              Icons.card_travel,
-              size: 128,
-              color: Colors.black12,
-            ),
-            Icon(
-              Icons.account_circle,
+              Icons.alarm,
               size: 128,
               color: Colors.black12,
             ),
           ],
         ),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: Text('header'.toUpperCase()),
-              )
-            ],
-          ),
-        ),
+        drawer: const DrawerDemo(),
+        bottomNavigationBar: const BottomNavigationBarDemo()
       ),
     );
   }
