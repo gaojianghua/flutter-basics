@@ -2,10 +2,12 @@
  * @Author: 高江华 g598670138@163.com
  * @Date: 2023-09-18 14:18:21
  * @LastEditors: 高江华
- * @LastEditTime: 2023-09-18 14:20:10
+ * @LastEditTime: 2023-09-20 13:58:19
  * @Description: file content
  */
 import 'package:flutter/material.dart';
+import './form_demo.dart';
+import './material_components.dart';
 
 class DrawerDemo extends StatelessWidget {
   const DrawerDemo({super.key});
@@ -46,7 +48,11 @@ class DrawerDemo extends StatelessWidget {
               color: Colors.black12,
               size: 22,
             ),
-            onTap: () => Navigator.pop(context),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const FormDemo()));
+            },
           ),
           ListTile(
             title: const Text(
@@ -58,7 +64,11 @@ class DrawerDemo extends StatelessWidget {
               color: Colors.black12,
               size: 22,
             ),
-            onTap: () => Navigator.pop(context),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const MaterialComponents()));
+            },
           ),
           ListTile(
             title: const Text(

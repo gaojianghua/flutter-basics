@@ -2,7 +2,7 @@
  * @Author: 高江华 g598670138@163.com
  * @Date: 2023-09-16 13:43:45
  * @LastEditors: 高江华
- * @LastEditTime: 2023-09-19 17:26:30
+ * @LastEditTime: 2023-09-20 10:41:55
  * @Description: file content
  */
 import 'package:flutter/material.dart';
@@ -12,6 +12,12 @@ import '../demo/bottom_navigation_bar_demo.dart';
 import '../demo/list_view_demo.dart';
 import '../demo/view_demo.dart';
 import '../demo/sliver_demo.dart';
+// import '../tabbar/home.dart';
+import '../tabbar/category.dart';
+import '../tabbar/video.dart';
+import '../tabbar/cart.dart';
+import '../tabbar/mine.dart';
+
 
 void main() => runApp(const App());
 
@@ -22,7 +28,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Home(),
+        '/category': (context) => const Category(),
+        '/video': (context) => const Video(),
+        '/cart': (context) => const Cart(),
+        '/mine': (context) => const Mine(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: const Color.fromRGBO(255, 255, 255, 0.5),
