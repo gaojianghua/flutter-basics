@@ -2,7 +2,7 @@
  * @Author: 高江华 g598670138@163.com
  * @Date: 2023-09-20 13:41:51
  * @LastEditors: 高江华
- * @LastEditTime: 2023-09-20 16:30:39
+ * @LastEditTime: 2023-09-21 10:24:34
  * @Description: file content
  */
 import 'package:flutter/material.dart';
@@ -13,6 +13,10 @@ class FormDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('FormDemo'),
+        elevation: 0.0,
+      ),
       body: Theme(
         data: ThemeData(
           primaryColor: Colors.blue,
